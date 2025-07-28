@@ -1,0 +1,42 @@
+.board {
+  display: grid;
+  width: 100%;
+}
+
+.cell {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  border: 1px solid #333;
+  cursor: pointer;
+}
+
+.cell.dark {
+  background-color: #bbb;
+}
+
+.cell.selected {
+  outline: 2px solid blue;
+}
+
+.cell.highlight {
+  background-color: rgba(0, 255, 0, 0.4);
+}
+
+.piece {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+  font-size: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.2rem;
+}

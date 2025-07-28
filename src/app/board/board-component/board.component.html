@@ -1,0 +1,12 @@
+<div class="board" [style.gridTemplateColumns]="'repeat(' + cols + ', 1fr)'">
+  <ng-container *ngFor="let _ of rowsArray; let r = index">
+    <ng-container *ngFor="let _ of colsArray; let c = index">
+      <div class="cell" [class.dark]="(r + c) % 2 === 1" [class.selected]="isSelected(r,c)"
+        [class.highlight]="isValidMove(r,c)" (click)="onCellClick(r,c)">
+        <div *ngIf="getPieceLabel(r,c)" class="piece">
+          {{ getPieceLabel(r,c) }}
+        </div>
+      </div>
+    </ng-container>
+  </ng-container>
+</div>

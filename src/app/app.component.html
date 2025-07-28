@@ -1,0 +1,5 @@
+<app-board-setup (startGame)="onStart($event)"></app-board-setup>
+
+<ng-container *ngIf="options as opt">
+  <app-board [rows]="opt.rows" [cols]="opt.cols"></app-board>
+</ng-container>

@@ -1,0 +1,19 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="field">
+    <label for="rows">Rows</label>
+    <input id="rows" type="number" formControlName="rows" />
+    <div *ngIf="form.get('rows')?.invalid && form.get('rows')?.touched" class="error">
+      Must be between 6 and 12
+    </div>
+  </div>
+
+  <div class="field">
+    <label for="cols">Cols</label>
+    <input id="cols" type="number" formControlName="cols" />
+    <div *ngIf="form.get('cols')?.invalid && form.get('cols')?.touched" class="error">
+      Must be between 6 and 12
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="form.invalid">Start</button>
+</form>
